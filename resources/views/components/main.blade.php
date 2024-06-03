@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<div>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -16,50 +17,9 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-white" href="#page-top">IL LIBBRROO</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item text-white"><a class="nav-link" href="#about">LOGOUT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">LOGIN</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">REGISTRATI</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <x-navbar/>
         <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">IL LIBRROOO DI MACCIOO</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Scegli ,compra , crea</h2>
-                        <a class="btn btn-primary" href="#about">Entra</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
-                        <p class="text-white-50">
-                           IL LIBRO DEI TUOI PERCHE? MA SOPRATUTTO CHI è?
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
-                        </p>
-                    </div>
-                </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
-            </div>
-        </section>
+        {{ $slot }}
         
 
         <!-- Contact-->
@@ -117,3 +77,4 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+</div>
