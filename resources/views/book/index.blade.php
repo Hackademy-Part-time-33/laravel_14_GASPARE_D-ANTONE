@@ -26,8 +26,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titolo</th>
+                        <th scope="col">Anno</th>
                         <th scope="col">Immagine</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +35,7 @@
                         <tr>
                             <th scope="row">#{{ $book->id }}</th>
                             <td>{{ $book->title }}</td>
+                            <td>{{ $book->year }}</td>
                             <td>
                                 {{-- <img class="card-img-top" style="width:3rem"
                                     src="{{ $book->image ? Storage::url($book->image) : '/template/assets/aulab-logo.svg' }}"
@@ -42,26 +43,26 @@
                             </td>
                             <td>
 
-                                {{-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    @auth
-                                        <a href="{{ route('books.edit', ['book' => $book->id]) }}"
-                                            class="btn btn-warning me-md-2">
+                               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                  
+                                        <a href="{{ route('book.edit', ['book' => $book->id]) }}"
+                                            class="btn btn-warning me-md-2 ">
                                             Modifica
                                         </a>
-                                        <a href="{{ route('books.show', ['book' => $book->id]) }}"
+                                        <a href="{{ route('book.show', ['book' => $book->id])}}"
                                             class="btn btn-primary me-md-2">
                                             Visualizza
                                         </a>
 
-                                        <form action="{{ route('books.destroy', ['book' => $book->id]) }}" method="POST">
+                                        <form action="{{ route('book.destroy', ['book' => $book->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger me-md-2">Elimina</button>
                                         </form>
-                                    @endauth
+                                  
 
                                   
-                                </div> --}}
+                                </div> 
                             </td>
                         </tr>
                     @empty
@@ -69,7 +70,7 @@
 
                 </tbody>
             </table>
-            {{-- {{ $books->links() }} --}}
+            {{ $books->links() }}
         </div>
 
 

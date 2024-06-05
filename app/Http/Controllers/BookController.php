@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BookCreateRequest;
+use App\Http\Requests\BookEditRequest;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class BookController extends Controller
         return view('homepage');
     }
 
-    public function library (){
-        $books = Book::all();
-        return view('book.library', compact('books'));
+    public function index (){
+        $books = Book::paginate(3);
+        return view('book.index', compact('books'));
     }
 
     public function create (){
@@ -29,9 +30,39 @@ class BookController extends Controller
             'year' => $request->year,
             'image' => $request->image,
         ]);
-        session()->flash('succes', 'Libro creato correttamente');
-        return redirect()->route('library');
+        session()->flash('success', 'Libro creato correttamente');
+        return redirect()->route('index');
 
+
+    }
+
+    public function show(Book $book){
+        return view('book.show', compact('book'));
+
+    }
+    public function edit(Book $book){
+        return view('book.edit', compact('book'));
+
+
+    }
+    public function update(Book $book, BookEditRequest $request)
+    {
+        $book->update([
+            'title' => $request->title,
+            'year' => $request->year,
+            'image' => $request->image,
+        ]);
+        session()->flash('success', 'Libro modificato correttamente');
+        return redirect()->route('index');
+
+
+    }
+
+    public function destroy(book $book){
+
+        $book->delete();
+        session()->flash('success', 'Libro cancellato correttamente');
+        return redirect()->route('index');
 
     }
 

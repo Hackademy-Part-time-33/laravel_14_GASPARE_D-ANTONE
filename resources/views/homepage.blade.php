@@ -7,7 +7,14 @@
                 <div class="text-center">
                     <h1 class="mx-auto my-0 text-uppercase">IL LIBRROOO DI MACCIOO</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Scegli ,compra , crea</h2>
-                    <a class="btn btn-primary" href="#about">Entra</a>
+                    @auth
+                    <p class="text-white">Benvenuto, {{ Auth::user()->name }}</p>
+                        
+                    @endauth
+                    @guest
+                        
+                    <a class="btn btn-primary" href="{{route('login')}}">Entra</a>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -21,7 +28,7 @@
                         <h2 class="card-title">Libreria</h2>
                         <p class="card-text">Qui trovi l'elenco completo di tutti i libri inseriti nel database</p>
                     </div>
-                    <div class="card-footer"><a class="btn btn-primary btn-sm submit" href="{{ route('library')}}">Entra</a></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm submit" href="{{ route('index')}}">Entra</a></div>
                 </div>
             </div>
             <div class="col-md-4 mb-5">

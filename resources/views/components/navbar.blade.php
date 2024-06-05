@@ -8,9 +8,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link text-white" href="#about">LOGOUT</a></li>
-                    <li class="nav-item "><a class="nav-link text-white" href="#projects">LOGIN</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#signup">REGISTRATI</a></li>
+                    @guest
+                    <li class="nav-item "><a class="nav-link text-white" href="{{ route('login')}}">LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{{ route('register')}}">REGISTRATI</a></li>
+                        
+                    @endguest
+                    @auth
+                    <form action="{{ route('logout')}}" method="POST">
+                        @csrf
+                        <button class="btn btn-sm btn-danger mx-2" type="submit">Logout</button>
+                    </form>
+                        
+                    @endauth
+                    
                 </ul>
             </div>
         </div>
