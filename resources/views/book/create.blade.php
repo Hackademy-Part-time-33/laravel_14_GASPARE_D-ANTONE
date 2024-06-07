@@ -11,6 +11,15 @@
             <input type="text" name="year" value="{{old('year')}}" class="form-control">
         </div>
         <div class="mb-3">
+            <select name="author_id" id="" class="form-controller">
+                @foreach ($authors as $author )
+                <option value="{{ $author->id }}">{{ $author->firstname . ' ' . $author->lastname}}</option>
+                    
+                @endforeach
+
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
             <input type="text" name="image" class="form-control">
         </div>

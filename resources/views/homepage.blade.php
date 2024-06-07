@@ -37,7 +37,7 @@
                         <h2 class="card-title">Autori</h2>
                         <p class="card-text">Tutti gli autori che hanno contribuito con le loro opere</p>
                     </div>
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Entra</a></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{ route('authors.index')}}">Entra</a></div>
                 </div>
             </div>
             <div class="col-md-4 mb-5">

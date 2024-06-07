@@ -4,20 +4,18 @@
             <div class="col-md-12 library">
                 <div class="pb-5 ">
                     <h1 class="text-black">
-                        {{$book->title}}
+                        {{$author->firstname}} {{$author->lastname}}
                     </h1>
                     <div>
                         <ul>
+                            @foreach ($author->books as $book )
                             <li>
-                                <p class="text-black">Anno libro:{{$book->year ?? 'ignoto'}}</p>
-                            </li>
-                            <li>
-                                <p class="text-black">Autore:{{ $book->author->firstname }}</p>
-                                <p class="text-black">Autore:{{ $book->author->lastname}}</p>
-                            </li>
-                        </ul>
-                               
+                               {{ $book->title}}
 
+                            </li>
+                                
+                            @endforeach
+                        </ul>
                             
                        
                          

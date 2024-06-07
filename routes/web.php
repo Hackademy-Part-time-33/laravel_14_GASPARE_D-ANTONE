@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ route::middleware(['auth'])->group(function(){
     Route::put('/book/{book}',[BookController::class,'update'] )->name('book.update');
     
 });
+
+Route::resource('authors', AuthorController::class);
 
 
 

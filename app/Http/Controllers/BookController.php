@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BookCreateRequest;
 use App\Http\Requests\BookEditRequest;
+use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class BookController extends Controller
 
     public function create (){
 
-        return view('book.create');
+        $authors = Author::all();
+        return view('book.create' , compact('authors'));
     }
 
     public function store(BookCreateRequest $request){
@@ -29,6 +31,7 @@ class BookController extends Controller
             'title' => $request->title,
             'year' => $request->year,
             'image' => $request->image,
+            'author_id' => $request->author_id,
         ]);
         session()->flash('success', 'Libro creato correttamente');
         return redirect()->route('index');
