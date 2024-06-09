@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[BookController::class,'homepage'] )->name('homepage');
@@ -23,6 +24,9 @@ route::middleware(['auth'])->group(function(){
 });
 
 Route::resource('authors', AuthorController::class);
+
+Route::resource('categories', CategoryController::class);
+
 
 
 
