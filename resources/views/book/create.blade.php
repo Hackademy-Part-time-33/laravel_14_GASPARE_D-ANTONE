@@ -17,6 +17,22 @@
                     
                 @endforeach
 
+
+            </select>
+        </div>
+        <div class="mb-3">
+          @foreach ( $categories as $category )
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="categories[]"
+                value="{{$category->id}}">
+                <label for="category_id" class="form-check-label">{{ $category->name}}</label>
+                
+
+            </div>
+              
+          @endforeach
+                
+
             </select>
         </div>
         <div class="mb-3">

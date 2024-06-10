@@ -15,6 +15,25 @@
             <label for="image" class="form-label">Immagine</label>
             <input type="text" name="image" class="form-control">
         </div>
+        <div class="mb-3">
+            @foreach ( $categories as $category )
+            <div class="form-check">
+
+                <input type="checkbox" name="category" class="form-check-input" name="categories[]" 
+                  @if ($book->categories->contains($category->id))
+                  checked
+                    
+                @endif
+                value="{{ $category->id}}">
+              
+                <label for="category_id" class="form-check-label">{{ $category->name}}</label>
+
+
+            </div>
+                
+            @endforeach
+        </div>
+
         <button type="submit" class="btn btn-info">Modifica</button>
 
 

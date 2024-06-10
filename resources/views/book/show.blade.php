@@ -14,6 +14,13 @@
                             <li>
                                 <p class="text-black">Autore:{{ $book->author->firstname }}</p>
                                 <p class="text-black">Autore:{{ $book->author->lastname}}</p>
+                                @forelse ($book->categories as $category )
+                                    <p>Categoria {{$category->name}}</p>
+                                    
+                                @empty
+                                    Nessuna categoria
+                                @endforelse
+                                
                             </li>
                         </ul>
                                

@@ -36,6 +36,7 @@
                             <th scope="row">#{{ $book->id }}</th>
                             <td>{{ $book->title }}</td>
                             <td>{{ $book->year }}</td>
+                            
                             <td>
                                 {{-- <img class="card-img-top" style="width:3rem"
                                     src="{{ $book->image ? Storage::url($book->image) : '/template/assets/aulab-logo.svg' }}"

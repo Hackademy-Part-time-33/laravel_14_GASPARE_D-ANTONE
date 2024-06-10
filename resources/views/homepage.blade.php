@@ -46,7 +46,7 @@
                         <h2 class="card-title">Categorie</h2>
                         <p class="card-text">Gialli,Thriller,Fantasy,Horror.</p>
                     </div>
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Entra</a></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{ route('categories.index')}}">Entra</a></div>
                 </div>
             </div>
         </div>
